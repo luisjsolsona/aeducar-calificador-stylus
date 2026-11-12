@@ -4,7 +4,7 @@ Mejora la vista de **calificación de tareas en Aeducar (Moodle)**: rúbrica ent
 
 | Pasarás de esto… | …a esto |
 |---|---|
-| ![Antes](img/antes.png) | ![Después](img/despues.png) |
+| ![Antes](img/antes.webp) | ![Después](img/despues.webp) |
 
 ## 1. Instalar Stylus (extensión del navegador)
 
