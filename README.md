@@ -2,6 +2,10 @@
 
 Mejora la vista de **calificación de tareas en Aeducar (Moodle)**: rúbrica entera y legible, PDF más grande y con fondo blanco. Solo cambia cómo lo ves tú; no modifica nada en Aeducar.
 
+| Pasarás de esto… | …a esto |
+|---|---|
+| ![Antes](img/antes.png) | ![Después](img/despues.png) |
+
 ## 1. Instalar Stylus (extensión del navegador)
 
 - Chrome / Edge: [Stylus en Chrome Web Store](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
