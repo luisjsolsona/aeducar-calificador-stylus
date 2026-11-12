@@ -1,0 +1,47 @@
+/* ==UserStyle==
+@name           Aeducar: calificador amplio con rúbrica completa
+@namespace      github.com/luisjsolsona
+@version        1.0.0
+@description    Rúbrica entera y legible, PDF más grande y con fondo blanco en el calificador de tareas de Aeducar (Moodle). Solo cambia la vista local.
+@author         Luis Solsona
+@homepageURL    https://github.com/luisjsolsona/aeducar-calificador-stylus
+@supportURL     https://github.com/luisjsolsona/aeducar-calificador-stylus/issues
+@updateURL      https://raw.githubusercontent.com/luisjsolsona/aeducar-calificador-stylus/main/aeducar-calificador.user.css
+@license        MIT
+==/UserStyle== */
+
+@-moz-document regexp("https://([^/]+\\.)?aeducar\\.es/mod/assign/view\\.php.*") {
+  /* Reparto: 55 % PDF / 45 % calificación */
+  .path-mod-assign [data-region="review-panel"] { right: 45% !important; width: auto !important; }
+  .path-mod-assign [data-region="grade-panel"]  { left: 55% !important; width: 45% !important; }
+
+  /* Rúbrica: cada criterio en bloque, niveles en una fila */
+  .path-mod-assign .gradingform_rubric { width: 100% !important; max-width: none !important; }
+  .path-mod-assign .gradingform_rubric table.criteria,
+  .path-mod-assign .gradingform_rubric table.criteria > tbody,
+  .path-mod-assign .gradingform_rubric tr.criterion { display: block !important; width: 100% !important; }
+  .path-mod-assign .gradingform_rubric tr.criterion { margin-bottom: 10px !important; border: 1px solid #ccc !important; }
+  .path-mod-assign .gradingform_rubric tr.criterion > td { display: block !important; width: 100% !important; box-sizing: border-box; }
+  .path-mod-assign .gradingform_rubric tr.criterion > td.description { font-weight: bold; background: #f0f0f0; }
+
+  .path-mod-assign .gradingform_rubric td.levels table,
+  .path-mod-assign .gradingform_rubric td.levels tbody { display: block !important; width: 100% !important; }
+  .path-mod-assign .gradingform_rubric td.levels tr { display: flex !important; width: 100% !important; }
+  .path-mod-assign .gradingform_rubric td.level {
+    display: block !important; flex: 1 1 0 !important; width: auto !important;
+    min-width: 0 !important; font-size: .82rem; padding: 4px !important;
+  }
+
+  /* PDF: fondo claro en lugar de gris */
+  .path-mod-assign .assignfeedback_editpdf_widget .drawingregion { background: #fff !important; }
+
+  /* PDF ampliado fijo (1.3 = 130 %). Se navega con las barras de scroll del panel.
+     Cambia el valor o borra el bloque si molesta al anotar. */
+  .path-mod-assign .assignfeedback_editpdf_widget .drawingcanvas { zoom: 1.3; }
+  .path-mod-assign .assignfeedback_editpdf_widget .drawingregion { overflow: auto !important; }
+
+  /* Comentario por criterio compacto */
+  .path-mod-assign .gradingform_rubric td.remark textarea {
+    width: 100% !important; height: 3.2em !important; min-height: 0 !important;
+  }
+}
